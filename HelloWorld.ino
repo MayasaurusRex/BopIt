@@ -3,6 +3,8 @@
 
 //This is Carter's comment for Assignment 15
 
+//This is Lexi's comment for Assignment 15
+
 void setup() {
   pinMode(newBTN, INPUT);
   pinMode(newLED, OUTPUT);
