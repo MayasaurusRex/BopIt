@@ -11,13 +11,13 @@ LiquidCrystal_I2C lcd = LiquidCrystal_I2C(0x27, 16, 2); // using I2C connection
 
 void setup() {
   //Initialize the LCD:
-  lcd.init();
-  lcd.backlight();
+  lcd.init(); // initialization call
+  lcd.backlight(); // turn on the backlight
 
   // set up pins
   pinSetup();
 
-  randomSeed(analogRead(4)); // random seed to generate random tasks
+  randomSeed(analogRead(5)); // random seed to generate random tasks
 }
 
 void loop() {

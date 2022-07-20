@@ -2,7 +2,7 @@
 
 void pinSetup() {
   // set all inputs
-  pinMode(StartBTN, INPUT);
+//  pinMode(StartBTN, INPUT);
   pinMode(Fret, INPUT);
   pinMode(StrumSw1, INPUT);
   pinMode(StrumSw2, INPUT);
@@ -11,4 +11,5 @@ void pinSetup() {
   pinMode(GreenLED, OUTPUT);
   pinMode(RedLED, OUTPUT);
   pinMode(Buzzer, OUTPUT);
+  pinMode(FretLED, OUTPUT);
 }
