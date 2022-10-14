@@ -99,9 +99,18 @@ The enclosure design was developed and completed in an iterative process.  The o
 
 ### 5.2 Enclosure makeup and structure
 The makeup of the enclosure is entirely 3D printed PLA plastic.  It is held together by a mixture of superglue and loctite gel, depending on the pieces in question.  Most of the larger components are held together with loctite, as it is strong and specifically recommended for 3D printed components.  Most of the smaller components were held together with super glue as it is strong and bonds quickly.  The whammy bar is held in place by a 3D printed round holder, attached to the hole on the top of the guitar intended for it.  The strum functionality is a 3D printed wedge, on two 3D printed mounts, held together with two 3D printed joints, resting on a 3D printed holder attached to the bottom of the guitar’s bottom.  This allows for access to the strum functionality without the switches being exposed. The fret button is simply through a designated hole on the neck enclosure.  The buzzer, reset button, LEDs, LCD display, and power button all are simply placed into the enclosure at designated locations where holes were placed. The front and back of the enclosure were designed so that they simply snap together, allowing for them to be easily assembled and be capable of being disassembled if needed.  The neck of the guitar has two pieces, one in the back and one in the front.  The front piece snaps on over the back piece, fitting securely without additional assistance such as superglue.  There are three additional pieces on the end of the neck that are only for decoration. 
+\
+![image](https://user-images.githubusercontent.com/67076014/195933420-6a42c816-9683-4c8b-ae98-add190fc9803.png)
+\
+\
+![image](https://user-images.githubusercontent.com/67076014/195933540-3e1c2107-ab69-4a45-8dfb-e88e2008c639.png)
 
 ### 5.3 Enclosure manufacturing process
 The enclosure was manufactured using Pitt’s Virtual Labs in the Hillman Library.  Each piece was printed on either an Ultimaker 3 or an Ultimaker S5.  This was done over a series of six prints, each taking between 17 and 21 hours and containing 8 to 12 pieces.  One of the prints had to be done twice due to a printer failure.  Most of the pieces were printed on the Ultimaker 3, however the neck of the guitar was long enough that those pieces had to be printed on the larger Ultimaker S5.  Each piece was printed using standard navy PLA, based on files generated for manufacturing in the Ultimaker Cura desktop application.  They were printed with supports that had to be removed, and some edges and holes had to be filed for assembly as they came out rougher or larger than intended. 
+\
+![image](https://user-images.githubusercontent.com/67076014/195933640-8e5eb3d0-e58f-43f2-9963-53c3c07a5b68.png)
+\
+![image](https://user-images.githubusercontent.com/67076014/195933757-4cc040f1-d297-4bc5-a0a1-fca6a4f10c37.png)
 
 ## 6. Assembly and system integration
 ### 6.1 Assembly methods
@@ -116,6 +125,7 @@ Initially, the software design was tested with the ATMega chip used, and a bread
 Once the PCB was assembled, it was tested thoroughly with the components that it was intended to attach to, outside of the enclosure.  This test procedure was to play the game, ensuring that all inputs were ordered and successfully completed, and that the game would fail when the time ran out or an incorrect input was pressed.  This test was successful after some calibration on the potentiometer. 
 After the entire enclosure was assembled, the game was tested fully to verify that it worked overall.  All inputs (whammy, strum, and fret) were tested when both correct and incorrect to verify that they could pass and fail when appropriate.  The timeout was tested on each instructed input to ensure that it would work.  The reset button was tested to ensure that it worked appropriately.  Each test was conducted by each member of the team to ensure that it would definitely work.  The game passed all tests conducted for both success and failure conditions. 	
 ### 7.2 Assembled prototype
+![image](https://user-images.githubusercontent.com/67076014/195933851-319bda3c-9125-45de-890d-dea256d18ea5.png)
 
 ### 7.3 Challenges encountered
 We ran into an issue where the bootloader on our microcontroller was using a different standard for delay timing than the microcontroller used in the prototype. The microcontroller was computing delay using an internal clock instead of the external crystal oscillator. After receiving guidance from Madison, the error was fixed in software.
@@ -124,7 +134,7 @@ In the meantime, we assumed that the chip currently soldered to the board was ma
 
 Later during testing, we ran into problems with reading the analog input of the potentiometer. We had an alternate Arduino sketch which would display the value being read in on the analog pin on the LCD, and this showed the maximum value of 1023 even as the voltage measured at the pin varied over a range of ~4V. We had an idea that it had to do with the analog reference (Aref) pin on the microcontroller and how that was configured in software. We reached out to the TAs of the class, who suggested that we disconnect Aref to leave it floating and use the internal analog reference of the microcontroller. The Aref pin was connected to ground on the PCB. At this point, the microcontroller was not soldered directly to the PCB, only mounted in a socket, so we were able to disconnect the Aref pin and then configure the reference in software. 
 ### 7.4 Final video
-Our final video is posted to YouTube at this link: 
+Our final video is posted to YouTube at this link: https://www.youtube.com/watch?v=0NSG8vWhVa4
 
 ## 8. Summary, Conclusions, and Future Work
 In summary, our project was a working guitar game with inputs of strum, whammy, and fret.  It scored users based on their completion of the assigned tasks in the allotted time.  The project was ultimately successful, as the game is playable with random instructions, working inputs and outputs, and a fully completed enclosure that does not expose the hardware or software.  Based on this project, we have concluded that it is important to start early and coordinate well as we did.  We have also concluded for the enclosure design that it should be done as early as possible, so that changes can be made as needed to fit the requirements of the project.  We have also concluded that making sure the software and hardware work together, and both fit inside the enclosure is key. 
