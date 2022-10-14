@@ -2,6 +2,7 @@
 ## 1. Design Overview
 ### 1.1 Description and purpose
 The purpose of the design for the Bop-It project was to create a prototype of a product that is inspired by a Guitar Hero controller and follows the Bop-It logic of user inputs. An image of the guitar hero controller can be seen below.
+\
 ![image](https://user-images.githubusercontent.com/67076014/195931919-f5331376-b1a5-4b21-9baf-a8012ffcadef.png)
 
 ### 1.2 Original design concepts
@@ -11,14 +12,20 @@ Ultimately, we decided to choose the guitar design. The enclosure of the guitar 
 
 ### 1.3 Final design
 The guitar design we chose to go with included three user inputs: a fret button, strum switches, and a whammy bar. The user would get audio inputs from a piezo buzzer and an LCD screen would display the required action, successes, failures, and the user’s current score. An ATMega328p chip and Arduino code control the logic of the circuit. On the software side, polling is used for inputs, random numbers are used for deciding next actions, and flags are used for program flow. The enclosure required over 54 3D printed parts and several hours of total printing. The final assembled product can be seen below.
+\
 ![IMG_3551 2](https://user-images.githubusercontent.com/67076014/195932043-807e6176-3d52-46c4-9d89-91cbbaf8a949.png)
 
 ## 2. Design Verification - Breadboard Prototype
 ### 2.1 Breadboard components	
 When simulating this circuit on a breadboard, we tried to find as many relevant components as we could to best simulate the design. We used the LCD display with an I2C converter to display the score and user prompts, a push button for the fret input, a potentiometer for the whammy input, and a piezo buzzer for the sound output. Instead of using switches to model the strum, we used push buttons since we did not have switches at the time of prototyping. Below is an image of the ATMega328p setup we used.
+\
+![Note Jun 27, 2022](https://user-images.githubusercontent.com/67076014/195932160-93004164-ef5f-45b8-818f-d4d84c1f9719.png)
 
 ### 2.2 Breadboard Setup
 The breadboard setup was vital to the planning of the hardware, software, and enclosure because it showed us the layout needed for the PCB, the software setup for tracking the pins, and the sizing required for the overall enclosure. Below is an image of the overall breadboard setup.
+\
+![image](https://user-images.githubusercontent.com/67076014/195932353-a104866f-8287-49e5-9c8f-822839df5f0f.png)
+
 
 ### 2.3 Breadboard Testing and Results	
 We tested our prototype on its handling of successful game playing, reaction time failures, and incorrect input failures.
@@ -29,7 +36,12 @@ A video of our completed breadboard prototype can be found here: https://youtu.b
 ### 3.1 PCB schematic	
 The first part of the PCB design was recreating the “Hello World” assignment setup. This is the minimum requirement for the board to function. This part of the schematic is shown on the microcontroller page and components shown in the green box on the I/O and Power page. This includes the microcontroller, oscillator with coupling capacitors, voltage regulator with coupling capacitors, programmer header, and reset pull-up resistor. 
 \
-The remaining part of the design was the I/O of the device: all of which is not on the PCB, but connected to the PCB through headers. This includes the I2C display, the whammy potentiometer with its current-limiting resistors, the success and failure LEDs with their current-limiting resistors, the buzzer, and the fret button, two strumming switches, and reset button, each with their own pull-up resistors (the pull-up resistor for the reset button is shown on the microcontroller page). There is also a header to power the built-in LED on the arcade button, but this functionality was not included in the final design because of space limitations for wiring
+![PCB_Schematic](https://user-images.githubusercontent.com/67076014/195932420-7d489f32-c285-4609-9b44-d3ed34b1a7f4.png)
+\
+<img width="648" alt="Screen Shot 2022-10-14 at 3 49 15 PM" src="https://user-images.githubusercontent.com/67076014/195932518-2659f330-d208-4735-85d6-203ab4b4db48.png">
+
+\
+The remaining part of the design was the I/O of the device: all of which is not on the PCB, but connected to the PCB through headers. This includes the I2C display, the whammy potentiometer with its current-limiting resistors, the success and failure LEDs with their current-limiting resistors, the buzzer, and the fret button, two strumming switches, and reset button, each with their own pull-up resistors (the pull-up resistor for the reset button is shown on the microcontroller page). There is also a header to power the built-in LED on the arcade button, but this functionality was not included in the final design because of space limitations for wiring.
 
 ### 3.2 PCB layout
 
