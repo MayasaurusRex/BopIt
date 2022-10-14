@@ -2,6 +2,7 @@
 ## 1. Design Overview
 ### 1.1 Description and purpose
 The purpose of the design for the Bop-It project was to create a prototype of a product that is inspired by a Guitar Hero controller and follows the Bop-It logic of user inputs. An image of the guitar hero controller can be seen below.
+![image](https://user-images.githubusercontent.com/67076014/195931919-f5331376-b1a5-4b21-9baf-a8012ffcadef.png)
 
 ### 1.2 Original design concepts
 Before landing on a final project idea, our group discussed two other ideas. The first was a standard Bop-It with twist, pull, and push controllers. The second was a DJ board with inputs of a rotary encoder, slide switch, and push button. Both of these options had straightforward enclosure designs since they could be laser cut boxes.
@@ -10,6 +11,7 @@ Ultimately, we decided to choose the guitar design. The enclosure of the guitar 
 
 ### 1.3 Final design
 The guitar design we chose to go with included three user inputs: a fret button, strum switches, and a whammy bar. The user would get audio inputs from a piezo buzzer and an LCD screen would display the required action, successes, failures, and the user’s current score. An ATMega328p chip and Arduino code control the logic of the circuit. On the software side, polling is used for inputs, random numbers are used for deciding next actions, and flags are used for program flow. The enclosure required over 54 3D printed parts and several hours of total printing. The final assembled product can be seen below.
+![IMG_3551 2](https://user-images.githubusercontent.com/67076014/195932043-807e6176-3d52-46c4-9d89-91cbbaf8a949.png)
 
 ## 2. Design Verification - Breadboard Prototype
 ### 2.1 Breadboard components	
