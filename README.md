@@ -5,7 +5,9 @@ The purpose of the design for the Bop-It project was to create a prototype of a 
 
 ### 1.2 Original design concepts
 Before landing on a final project idea, our group discussed two other ideas. The first was a standard Bop-It with twist, pull, and push controllers. The second was a DJ board with inputs of a rotary encoder, slide switch, and push button. Both of these options had straightforward enclosure designs since they could be laser cut boxes.
+
 Ultimately, we decided to choose the guitar design. The enclosure of the guitar posed a challenge to us since it was complex and required 3D printing, which none of us had experience with before the project.
+
 ### 1.3 Final design
 The guitar design we chose to go with included three user inputs: a fret button, strum switches, and a whammy bar. The user would get audio inputs from a piezo buzzer and an LCD screen would display the required action, successes, failures, and the user’s current score. An ATMega328p chip and Arduino code control the logic of the circuit. On the software side, polling is used for inputs, random numbers are used for deciding next actions, and flags are used for program flow. The enclosure required over 54 3D printed parts and several hours of total printing. The final assembled product can be seen below.
 
@@ -24,11 +26,13 @@ A video of our completed breadboard prototype can be found here: https://youtu.b
 
 ### 3.1 PCB schematic	
 The first part of the PCB design was recreating the “Hello World” assignment setup. This is the minimum requirement for the board to function. This part of the schematic is shown on the microcontroller page and components shown in the green box on the I/O and Power page. This includes the microcontroller, oscillator with coupling capacitors, voltage regulator with coupling capacitors, programmer header, and reset pull-up resistor. 
+\
 The remaining part of the design was the I/O of the device: all of which is not on the PCB, but connected to the PCB through headers. This includes the I2C display, the whammy potentiometer with its current-limiting resistors, the success and failure LEDs with their current-limiting resistors, the buzzer, and the fret button, two strumming switches, and reset button, each with their own pull-up resistors (the pull-up resistor for the reset button is shown on the microcontroller page). There is also a header to power the built-in LED on the arcade button, but this functionality was not included in the final design because of space limitations for wiring
 
 ### 3.2 PCB layout
 
 Above is shown the front and back layout for the PCB. The top plane is the 5V Vcc plane, and the bottom plane is the ground plane. The microcontroller is centrally located and the power input and regulator are in the bottom right-hand corner. All I/O, the programmer header, and the crystal oscillator are arranged around the microcontroller in the order of where they connect to it to reduce crossing of traces. The only exceptions to this are the reset and MISO pins of the programmer header, which have to be routed on the bottom of the board through vias. Capacitor C4 is a coupling capacitor between Vcc and Ground, so it can go anywhere on the board where the planes are not cut off by traces.	
+\
 The use of Vcc and ground planes made soldering to those planes slightly more difficult, but made the layout design much simpler. There are two holes for mounting the PCB in the enclosure with M3 screws, but it was decided to not mount the board in this way.
 
 ## 4. Software Implementation
@@ -106,7 +110,6 @@ In summary, our project was a working guitar game with inputs of strum, whammy, 
 \
 \
 In terms of takeaways for software development, we learned the importance of starting early and creating ways in which we can streamline the process if any changes need to take place. Especially with a microcontroller with limited memory on the chip, it’s important to be concise with the logic. Moving forward, it would be very helpful to plan out logic on paper before implementing it in code to better visualize how subroutines interact. The Scrum method was helpful to stay on track, but implementing Kanban specific to the software could really be beneficial.
-
 \
 \
 In future PCB design projects or if we were to redo the PCB design for this project, these are the guidelines we would follow.  First, leave more space at the edges of the board in order for the board to be properly held/gripped during assembly. Some components near the edge of the board made it difficult to hold the board in the circuit board holder. Next, arrange components (especially headers) more neatly and in line. It makes a big impact on the aesthetics of the board.  There are basically no components on the board which are lined up with one another, and as a result the board looks very messy despite being fairly simple. We would take care to ensure a perfect match between the prototype setup and the PCB schematic. This could have fixed our error with Aref. We would also more carefully consider size limitations and mounting requirements for the board before beginning routing. Because the inside of the enclosure was not perfectly hollow, there was less open space for the board to go than we initially thought.  The main change that we would make to the enclosure would be to make it an inch or so deeper, to allow more room for wiring and components. 
